@@ -1,10 +1,11 @@
-// contracts/Counter.sol
-pragma solidity ^0.5.0;
+// contracts/GLDToken.sol
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
 
-contract Counter {
-    uint256 public value;
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
-    function increase() public {
-      value++;
+contract GLDToken is ERC20 {
+    constructor(uint256 initialSupply) ERC20("Gold", "GLD") {
+        _mint(msg.sender, initialSupply);
     }
 }
